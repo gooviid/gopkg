@@ -1,3 +1,3 @@
-module github.com/gooviid/goovi
+module github.com/gooviid/gopkg
 
 go 1.18
