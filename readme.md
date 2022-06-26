@@ -5,3 +5,7 @@ GOOVI.ID is video, audio, and image service for smaller file, good quality.
 ## Installation
 
     go get github.com/gooviid/gopkg
+
+## Disclaimer
+
+The software are on active development
