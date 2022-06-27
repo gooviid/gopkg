@@ -1,0 +1,7 @@
+credential.go
+
+
+const GooviKey string = "19c7d6305b714543b792fcc16ffba3da-cak2f5ua0brmcl3tp0eg"
+
+const S3_PUB_KEY_ID = "GOOGDJS2PQZYJM7NVMXI7RMB"
+const S3_PUB_KEY_SECRET = "wY+whWb8Rs9UZApLfRREF28F+HtSUJB2SxM5lfU4"

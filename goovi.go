@@ -15,7 +15,7 @@ const keyConstant = "X-API-KEY"
 func CreateTranscode(key string, request CreateTranscodeRequest, client *http.Client) error {
 	c := client
 	if c == nil {
-		c = &http.Client{}
+		c = http.DefaultClient
 	}
 
 	b, err := json.Marshal(request)
@@ -32,9 +32,12 @@ func CreateTranscode(key string, request CreateTranscodeRequest, client *http.Cl
 
 	r.Header.Set(keyConstant, key)
 
-	response, err := client.Do(r)
+	response, err := c.Do(r)
+	if err != nil {
+		return err
+	}
 
-	if response.StatusCode > 400 {
+	if response.StatusCode >= 400 {
 		bodyBytes, err := io.ReadAll(response.Body)
 		if err != nil {
 			return err
@@ -50,7 +53,7 @@ func CreateTranscode(key string, request CreateTranscodeRequest, client *http.Cl
 func CreateCompress(key string, request CreateCompressRequest, client *http.Client) error {
 	c := client
 	if c == nil {
-		c = &http.Client{}
+		c = http.DefaultClient
 	}
 
 	b, err := json.Marshal(request)
@@ -66,10 +69,14 @@ func CreateCompress(key string, request CreateCompressRequest, client *http.Clie
 	}
 
 	r.Header.Set(keyConstant, key)
+	r.Header.Set("Content-Type", "application/json")
 
-	response, err := client.Do(r)
+	response, err := c.Do(r)
+	if err != nil {
+		return err
+	}
 
-	if response.StatusCode > 400 {
+	if response.StatusCode >= 400 {
 		bodyBytes, err := io.ReadAll(response.Body)
 		if err != nil {
 			return err
@@ -77,6 +84,6 @@ func CreateCompress(key string, request CreateCompressRequest, client *http.Clie
 		bodyString := string(bodyBytes)
 		return errors.New(bodyString)
 	}
-	
+
 	return nil
 }
