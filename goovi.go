@@ -31,6 +31,7 @@ func CreateTranscode(key string, request CreateTranscodeRequest, client *http.Cl
 	}
 
 	r.Header.Set(keyConstant, key)
+	r.Header.Set("Content-Type", "application/json")
 
 	response, err := c.Do(r)
 	if err != nil {
