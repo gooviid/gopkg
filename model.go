@@ -16,6 +16,7 @@ type WebhookData struct {
 
 type TranscodeQueue struct {
 	QueueId          string                     `json:"queue_id"`
+	MerchantGivenID  string                     `json:"merchant_given_id"`
 	QueueStatus      string                     `json:"queue_status"`
 	ChargeStatus     string                     `json:"charge_status"`
 	TotalPrice       float32                    `json:"total_price"`
