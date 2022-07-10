@@ -8,10 +8,11 @@ import (
 )
 
 type WebhookData struct {
-	IsSuccess bool                       `json:"is_success"`
-	QueueID   string                     `json:"queue_id"`
-	Error     *goovimodel.TranscodeError `json:"error"`
-	Media     []goovimodel.MediaInfo     `json:"media"`
+	IsSuccess    bool                       `json:"is_success"`
+	QueueID      string                     `json:"queue_id"`
+	CallbackData string                     `json:"callback_data"`
+	Error        *goovimodel.TranscodeError `json:"error"`
+	Media        []goovimodel.MediaInfo     `json:"media"`
 }
 
 type TranscodeQueue struct {
@@ -19,6 +20,7 @@ type TranscodeQueue struct {
 	MerchantGivenID  string                     `json:"merchant_given_id"`
 	QueueStatus      string                     `json:"queue_status"`
 	ChargeStatus     string                     `json:"charge_status"`
+	CallbackData     string                     `json:"callback_data"`
 	TotalPrice       float32                    `json:"total_price"`
 	CreatedAt        time.Time                  `json:"created_at"`
 	ResolutionTarget []string                   `json:"resolution_target"`

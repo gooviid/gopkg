@@ -5,6 +5,7 @@ type CreateTranscodeRequest struct {
 	ResolutionTarget []ResolutionTarget `json:"resolution_target"`
 	FileTarget       []FileTarget       `json:"file_target"`
 	CallbackUrl      string             `json:"callback_url"`
+	CallbackData     string             `json:"callback_data"`
 	DurationInSecond int32              `json:"duration_in_second"`
 	Mute             bool               `json:"mute"`
 	Source           SourceTranscode    `json:"source"`
@@ -16,6 +17,7 @@ type CreateTranscodeRequest struct {
 type CreateCompressRequest struct {
 	MerchantGivenID string          `json:"merchant_given_id"`
 	CallbackUrl     string          `json:"callback_url"`
+	CallbackData    string          `json:"callback_data"`
 	Sizes           []int           `json:"sizes"`
 	Source          SourceTranscode `json:"source"`
 	Destination     SourceTranscode `json:"destination"`
