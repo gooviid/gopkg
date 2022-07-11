@@ -53,10 +53,10 @@ const (
 type ResolutionTarget string
 
 const (
-	_360p  ResolutionTarget = "360p"
-	_560p  ResolutionTarget = "560p"
-	_720p  ResolutionTarget = "720p"
-	_1080p ResolutionTarget = "1080p"
-	_4k    ResolutionTarget = "4k"
-	_All   ResolutionTarget = "all"
+	Res360p  ResolutionTarget = "360p"
+	Res560p  ResolutionTarget = "560p"
+	Res720p  ResolutionTarget = "720p"
+	Res1080p ResolutionTarget = "1080p"
+	Res4k    ResolutionTarget = "4k"
+	ResAll   ResolutionTarget = "all"
 )
