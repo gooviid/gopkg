@@ -25,7 +25,6 @@ type CreateCompressRequest struct {
 
 type SourceTranscode struct {
 	Url             string `json:"url"`
-	IsPublic        bool   `json:"isPublic"`
 	AccessKeyId     string `json:"access_key_id"`
 	AccessKeySecret string `json:"access_key_secret"`
 }
